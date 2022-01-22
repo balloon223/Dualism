@@ -29,11 +29,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+
+    void Update()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        //rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
 
         if (facingRight == false && moveInput > 0)
         {
@@ -43,10 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
-    }
 
-    void Update()
-    {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))

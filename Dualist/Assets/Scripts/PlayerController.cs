@@ -103,6 +103,15 @@ public class PlayerController : MonoBehaviour
 
             transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
 
+            if (facingRight == false && moveInput > 0)
+            {
+                Flip();
+            }
+            else if (facingRight == true && moveInput < 0)
+            {
+                Flip();
+            }
+
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 //   anim.SetTrigger("takeOff");

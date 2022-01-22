@@ -6,6 +6,7 @@ public class ActivateWorlds : MonoBehaviour
 {
     public GameObject realWorldObject;
     public GameObject spiritWorldObject;
+    public float realWorldIsActive;
 
     public float currentRealWorldTime = 0f;
     public float currentSpiritWorldTime = 0f;
@@ -27,11 +28,13 @@ public class ActivateWorlds : MonoBehaviour
         }
         else if (currentRealWorldTime <= 0)
         {
+            realWorldIsActive = 0; //Reeal World is Inactive
             realWorldObject.SetActive(false);
             spiritWorldObject.SetActive(true);
         }
         else if (currentRealWorldTime > 0)
         {
+            realWorldIsActive = 1; //Real World is Active
             realWorldObject.SetActive(true);
             spiritWorldObject.SetActive(false);
         }

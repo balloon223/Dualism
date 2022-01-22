@@ -585,8 +585,9 @@ GameObject:
   - component: {fileID: 34839306}
   - component: {fileID: 34839305}
   - component: {fileID: 34839308}
+  - component: {fileID: 34839309}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Meditate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GuiOn: 0
-  Text: Confess to her
+  Text: Focus on yourself
   BoxSize:
     serializedVersion: 2
     x: 0
@@ -718,6 +719,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isColliding: 0
   damage: 25
+--- !u!114 &34839309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34839303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e87f37a9ede8142ad67a0c44086a3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isColliding: 0
+  damage: -25
 --- !u!1 &48536364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1793,7 @@ GameObject:
   - component: {fileID: 1130850279}
   - component: {fileID: 1130850282}
   - component: {fileID: 1130850283}
+  - component: {fileID: 1130850284}
   m_Layer: 0
   m_Name: Bag of chips
   m_TagString: Untagged
@@ -1911,6 +1927,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isColliding: 0
   damage: 25
+--- !u!114 &1130850284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130850278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12ccb4c6867eb14797e85e263c3b165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isColliding: 0
+  damage: -25
 --- !u!1 &1176873332
 GameObject:
   m_ObjectHideFlags: 0

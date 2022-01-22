@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         }
         else //when real world is inactive
         {
-            Physics2D.gravity = new Vector2(0, 9.8f);
+            Physics2D.gravity = new Vector2(0, 6.8f);
             moveInput = Input.GetAxisRaw("Horizontal");
 
             transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;

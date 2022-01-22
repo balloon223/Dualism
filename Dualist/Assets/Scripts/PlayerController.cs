@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     private float moveInput;
+    private Vector2 moveDirection;
 
     private bool facingRight = true;
 
@@ -22,71 +23,102 @@ public class PlayerController : MonoBehaviour
 
     public Animator anim;
 
+    ActivateWorlds activateWorlds;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        activateWorlds = FindObjectOfType<ActivateWorlds>();
     }
 
 
     void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        //rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
-
-        if (facingRight == false && moveInput > 0)
+        if (activateWorlds.realWorldIsActive == 1) //when real world is active
         {
-            Flip();
-        }
-        else if (facingRight == true && moveInput < 0)
-        {
-            Flip();
-        }
+            Physics2D.gravity = new Vector2(0, -9.8f);
+            moveInput = Input.GetAxisRaw("Horizontal");
+            //rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+            transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
 
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+            if (facingRight == false && moveInput > 0)
+            {
+                Flip();
+            }
+            else if (facingRight == true && moveInput < 0)
+            {
+                Flip();
+            }
 
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
-        {
-         //   anim.SetTrigger("takeOff");
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
-        }
+            isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        /*if(isJumping == false){
-                if(Input.GetKey(KeyCode.Space)){
-                    if(jumpTimeCounter > 0){
+            if (isGrounded == true && Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                //   anim.SetTrigger("takeOff");
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
+                rb.velocity = Vector2.up * jumpForce;
+            }
 
-                        rb.velocity = Vector2.up * jumpForce;
-                        jumpTimeCounter -= Time.deltaTime;
-                    } else {
+            /*if(isJumping == false){
+                    if(Input.GetKey(KeyCode.Space)){
+                        if(jumpTimeCounter > 0){
 
+                            rb.velocity = Vector2.up * jumpForce;
+                            jumpTimeCounter -= Time.deltaTime;
+                        } else {
+
+                        }
                     }
-                }
-            }*/
-        if (isGrounded == true)
-        {
-            anim.SetBool("isJumping", false);
-        }
-        else
-        {
-            anim.SetBool("isJumping", true);
-        }
+                }*/
+            if (isGrounded == true)
+            {
+                anim.SetBool("isJumping", false);
+            }
+            else
+            {
+                anim.SetBool("isJumping", true);
+            }
 
-        if (!Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
-        {
-            isJumping = false;
-        }
+            if (!Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+            {
+                isJumping = false;
+            }
 
-        if (moveInput == 0)
-        {
-            anim.SetBool("isRunning", false);
+            if (moveInput == 0)
+            {
+                anim.SetBool("isRunning", false);
+            }
+            else
+            {
+                anim.SetBool("isRunning", true);
+            }
         }
-        else
+        else //when real world is inactive
         {
-            anim.SetBool("isRunning", true);
+            Physics2D.gravity = new Vector2(0, 9.8f);
+            moveInput = Input.GetAxisRaw("Horizontal");
+
+            transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
+
+            if (facingRight == false && moveInput > 0)
+            {
+                Flip();
+            }
+            else if (facingRight == true && moveInput < 0)
+            {
+                Flip();
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                //   anim.SetTrigger("takeOff");
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
+                rb.velocity = Vector2.down * jumpForce;
+            }
         }
     }
 

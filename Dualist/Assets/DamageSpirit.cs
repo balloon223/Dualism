@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageHealth : MonoBehaviour
+public class DamageSpirit : MonoBehaviour
 {
     public bool isColliding;
     public int damage = 25;
@@ -24,8 +24,8 @@ public class DamageHealth : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                playerStats.TakeHealthDamage(damage);
-            }        
+                playerStats.TakeSpiritDamage(damage);
+            }
         }
     }
 }

@@ -8,13 +8,22 @@ public class PlayerStats : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
+    public int spiritLevel = 10;
+    public int maxSpirit;
+    public int currentSpirit;
+
     public HealthBar healthBar;
+    public SpiritBar spiritBar;
 
     void Start()
     {
         maxHealth = SexMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+        maxSpirit = SexMaxSpiritFromSpiritLevel();
+        currentSpirit = maxSpirit;
+        spiritBar.SetMaxSpirit(maxSpirit);
     }
 
     private int SexMaxHealthFromHealthLevel()
@@ -23,10 +32,23 @@ public class PlayerStats : MonoBehaviour
         return maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    private int SexMaxSpiritFromSpiritLevel()
+    {
+        maxSpirit = spiritLevel * 10;
+        return maxSpirit;
+    }
+
+    public void TakeHealthDamage(int damage)
     {
         currentHealth = currentHealth - damage;
 
         healthBar.SetCurrentHealth(currentHealth);
+    }
+
+    public void TakeSpiritDamage(int damage)
+    {
+        currentSpirit = currentSpirit - damage;
+
+        spiritBar.SetCurrentSpirit(currentSpirit);
     }
 }

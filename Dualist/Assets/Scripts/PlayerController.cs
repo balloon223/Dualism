@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private Vector2 moveDirection;
 
+    public int damage = 5;
+
     private bool facingRight = true;
 
     public bool isGrounded;
@@ -23,11 +25,14 @@ public class PlayerController : MonoBehaviour
 
     public Animator anim;
 
+    PlayerStats playerStats;
+
     ActivateWorlds activateWorlds;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerStats = FindObjectOfType<PlayerStats>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         activateWorlds = FindObjectOfType<ActivateWorlds>();
@@ -57,6 +62,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded == true && Input.GetKeyDown(KeyCode.UpArrow))
             {
                 //   anim.SetTrigger("takeOff");
+                playerStats.TakeHealthDamage(damage);
                 isJumping = true;
                 jumpTimeCounter = jumpTime;
                 rb.velocity = Vector2.up * jumpForce;
@@ -115,6 +121,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 //   anim.SetTrigger("takeOff");
+                playerStats.TakeSpiritDamage(damage);
                 isJumping = true;
                 jumpTimeCounter = jumpTime;
                 rb.velocity = Vector2.down * jumpForce;

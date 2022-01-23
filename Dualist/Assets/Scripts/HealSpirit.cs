@@ -18,6 +18,11 @@ public class HealSpirit : MonoBehaviour
         isColliding = true;
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isColliding = false;
+    }
+
     private void Update()
     {
         if (isColliding)

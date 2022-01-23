@@ -10,7 +10,8 @@ public class ActivateWorlds : MonoBehaviour
 
     public float currentRealWorldTime = 0f;
     public float currentSpiritWorldTime = 0f;
-    float startTime = 6f;
+    public float startTime = 0f;
+    public float resetTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,9 @@ public class ActivateWorlds : MonoBehaviour
     void Update()
     {
         currentRealWorldTime -= Time.deltaTime;
-        if (currentRealWorldTime < -6f)
+        if (currentRealWorldTime < resetTime)
         {
-            currentRealWorldTime = 6f;
+            currentRealWorldTime = startTime;
         }
         else if (currentRealWorldTime <= 0)
         {

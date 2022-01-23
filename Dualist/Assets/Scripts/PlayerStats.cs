@@ -51,4 +51,27 @@ public class PlayerStats : MonoBehaviour
 
         spiritBar.SetCurrentSpirit(currentSpirit);
     }
+
+    public void Update()
+    {
+        if (currentHealth >= 100f)
+        {
+            currentHealth = 100;
+        }
+
+        if (currentSpirit >= 100f)
+        {
+            currentSpirit = 100;
+        }
+
+        if (currentHealth <= 0f)
+        {
+            currentHealth = 0;
+        }
+
+        if (currentSpirit <= 0f)
+        {
+            currentSpirit = 0;
+        }
+    }
 }

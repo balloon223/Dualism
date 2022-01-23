@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageSpirit : MonoBehaviour
+public class HealHealth : MonoBehaviour
 {
     public bool isColliding;
-    public int damage = 25;
+    public int damage = -25;
     PlayerStats playerStats;
 
     private void Start()
@@ -18,13 +18,18 @@ public class DamageSpirit : MonoBehaviour
         isColliding = true;
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isColliding = false;
+    }
+
     private void Update()
     {
         if (isColliding)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                playerStats.TakeSpiritDamage(damage);
+                playerStats.TakeHealthDamage(damage);
             }
         }
     }

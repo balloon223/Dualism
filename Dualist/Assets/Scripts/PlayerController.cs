@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
         else //when real world is inactive
         {
             anim.SetBool("isSpirit", true);
+            anim.SetBool("isJumping", false);
             Physics2D.gravity = new Vector2(0, 6.8f);
             moveInput = Input.GetAxisRaw("Horizontal");
 

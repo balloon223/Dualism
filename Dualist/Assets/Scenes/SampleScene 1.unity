@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 9988978}
   - component: {fileID: 9988979}
   - component: {fileID: 9988980}
-  - component: {fileID: 9988982}
   - component: {fileID: 9988981}
+  - component: {fileID: 9988982}
   m_Layer: 0
   m_Name: Interact_indoor_0 (1)
   m_TagString: Untagged
@@ -199,7 +199,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -316633917413489275, guid: 3c7f8599c6d42134f8efb7b8c5f736ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isColliding: 0
-  damage: -10
+  damage: 10
 --- !u!114 &9988982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,11 +279,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9988976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b12ccb4c6867eb14797e85e263c3b165, type: 3}
+  m_Script: {fileID: 11500000, guid: db06fe699efbb8746b7315868112d780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isColliding: 0
-  damage: -10
+  damage: 15
 --- !u!1 &10568957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2613,7 +2613,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -316633917413489275, guid: 3c7f8599c6d42134f8efb7b8c5f736ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5916,6 +5916,8 @@ GameObject:
   - component: {fileID: 1761564949}
   - component: {fileID: 1761564948}
   - component: {fileID: 1761564947}
+  - component: {fileID: 1761564951}
+  - component: {fileID: 1761564950}
   m_Layer: 0
   m_Name: Interact_indoor_0
   m_TagString: Untagged
@@ -6035,6 +6037,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1761564950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761564945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db06fe699efbb8746b7315868112d780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isColliding: 0
+  damage: 10
+--- !u!114 &1761564951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761564945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26505bceab264424688aa199ad55ac7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isColliding: 0
+  damage: 10
 --- !u!1 &1777773457
 GameObject:
   m_ObjectHideFlags: 0

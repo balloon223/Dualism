@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     {
         if (activateWorlds.realWorldIsActive == 1) //when real world is active
         {
+            anim.SetBool("isSpirit", false);
             Physics2D.gravity = new Vector2(0, -9.8f);
             moveInput = Input.GetAxisRaw("Horizontal");
             //rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
@@ -104,6 +105,7 @@ public class PlayerController : MonoBehaviour
         }
         else //when real world is inactive
         {
+            anim.SetBool("isSpirit", true);
             Physics2D.gravity = new Vector2(0, 6.8f);
             moveInput = Input.GetAxisRaw("Horizontal");
 

@@ -11,7 +11,7 @@ public class SpiritBar : MonoBehaviour
     public void SetMaxSpirit(int maxSpirit)
     {
         slider.maxValue = maxSpirit;
-        slider.value = maxSpirit;
+        slider.value = maxSpirit / 2;
     }
 
     public void SetCurrentSpirit(int currentSpirit)

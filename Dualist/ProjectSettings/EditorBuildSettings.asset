@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SampleScene 1.unity
+    guid: 9206847017160ba4ea0c3b2ef445d8f5
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Ending_OverEat.unity
+    guid: 5cc08470c2f900748ab4e950c3602702
+  - enabled: 1
+    path: Assets/Scenes/Ending_EmotionalCrackdown.unity
+    guid: fa6a762e3a6b04643aa9bcacd96b48b6
+  - enabled: 1
+    path: Assets/Scenes/Ending_Success.unity
+    guid: 58265e296f32eee41b6bc3aea97567a3
+  - enabled: 1
+    path: Assets/Scenes/Ending_Fail.unity
+    guid: fc4480839bd06bf4a992b87f2b9148ec
   m_configObjects: {}

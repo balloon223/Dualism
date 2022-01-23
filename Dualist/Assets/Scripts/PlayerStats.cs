@@ -18,11 +18,11 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         maxHealth = SexMaxHealthFromHealthLevel();
-        currentHealth = maxHealth;
+        currentHealth = maxHealth / 2;
         healthBar.SetMaxHealth(maxHealth);
 
         maxSpirit = SexMaxSpiritFromSpiritLevel();
-        currentSpirit = maxSpirit;
+        currentSpirit = maxSpirit / 2;
         spiritBar.SetMaxSpirit(maxSpirit);
     }
 

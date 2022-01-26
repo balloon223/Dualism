@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageHealth : MonoBehaviour
+public class Key : MonoBehaviour
 {
+    public GameObject door;
     public bool isColliding;
-    public int damage = 25;
-    PlayerStats playerStats;
     AudioSource audioSource;
 
     private void Start()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -31,9 +29,9 @@ public class DamageHealth : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                playerStats.TakeHealthDamage(damage);
+                Destroy(door);
                 audioSource.Play();
-            }        
+            }
         }
     }
 }

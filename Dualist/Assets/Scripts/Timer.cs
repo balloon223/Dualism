@@ -44,7 +44,7 @@ public class Timer : MonoBehaviour
         {
             stopTimer = true;
             
-            if (playerStats.currentHealth >= 50 && playerStats.currentSpirit >= 50)
+            if (playerStats.currentHealth > 50 && playerStats.currentSpirit > 50)
             {
                 StartCoroutine(LoadScene());
                 IEnumerator LoadScene()

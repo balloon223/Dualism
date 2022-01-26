@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         activateWorlds = FindObjectOfType<ActivateWorlds>();
     }
 
-
     void Update()
     {
         if (activateWorlds.realWorldIsActive == 1) //when real world is active

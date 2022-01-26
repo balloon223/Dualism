@@ -7,10 +7,12 @@ public class DamageSpirit : MonoBehaviour
     public bool isColliding;
     public int damage = 25;
     PlayerStats playerStats;
+    AudioSource audioSource;
 
     private void Start()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,6 +32,7 @@ public class DamageSpirit : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 playerStats.TakeSpiritDamage(damage);
+                audioSource.Play();
             }
         }
     }
